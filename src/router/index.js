@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Cards from '@/components/Cards'
 import Prueba from '@/components/Prueba'
+import Prueba611 from '@/components/Prueba611'
 import Grid from '@/components/Grid'
 import Imagen from '@/components/Imagen'
 import High from '@/components/High'
@@ -23,6 +24,11 @@ export default new Router({
       path: '/prueba',
       name: 'Prueba',
       component: Prueba
+    },
+    {
+      path: '/prueba611',
+      name: 'Prueba611',
+      component: Prueba611
     },
     {
       path: '/grid',
@@ -58,6 +64,11 @@ export default new Router({
       path: '/dynamicchart',
       name: 'DynamicChart',
       component: DynamicChart
+    },
+    {
+      path: '/high',
+      name: 'High',
+      component: High
     }
   ]
 })

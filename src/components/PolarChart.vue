@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import VueHighcharts from 'vue2-highcharts'
 import highchartsMore from 'highcharts/highcharts-more'
 import * as data from '../assets/data.js'
@@ -15,12 +16,20 @@ export default {
   },
   data () {
     return {
-      options: data.polarData,
-      highchartsMore: highchartsMore
+      options: data.voltagesChart,
+      highchartsMore: highchartsMore,
+      row: ''
     }
   },
-  mounted () {},
+  mounted () {
+    this.getLineVoltagesAndPhases()
+  },
   methods: {
+    getLineVoltagesAndPhases: function () {
+      axios.get('http://localhost:8080/load_line_voltages_phases').then(response => {
+        this.row = response.data
+      })
+    }
   }
 }
 </script>
@@ -28,7 +37,7 @@ export default {
 <style>
 .polar-chart {
   width: 300px;
-  margin: 10px;
+  margin: 5px;
   padding: 0;
   text-align: center;
 }

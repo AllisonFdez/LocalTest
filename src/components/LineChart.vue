@@ -21,7 +21,16 @@ export default {
   data () {
     return {
       options: data.basicData,
-      Highcharts: Highcharts
+      Highcharts: Highcharts,
+      asyncData: {
+        name: 'Red',
+        marker: {
+          symbol: 'square'
+        },
+        data: [
+          7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 23.3
+        ]
+      }
     }
   },
   mounted () {},
@@ -37,17 +46,7 @@ export default {
     add () {
       this.$refs.lineCharts.addSeries({
         data: [
-          10.0,
-          8.9,
-          19.5,
-          16.5,
-          20.2,
-          23.5,
-          27.2,
-          20.3,
-          16.3,
-          19.9,
-          6
+          10.0, 8.9, 19.5, 16.5, 20.2, 23.5, 27.2, 20.3, 16.3, 19.9, 6
         ]
       })
     }

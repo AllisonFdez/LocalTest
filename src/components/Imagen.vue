@@ -5,21 +5,21 @@
          <v-card class="red220">
          </v-card>
          <v-card class="n650" @click.native.stop="dialog650 = true">
-             <v-dialog v-model="dialog650" width="80%" scrollable="true">
+             <v-dialog v-model="dialog650" width="80%">
                  <prueba />
              </v-dialog>
          </v-card>
         <v-dialog v-model="dialog611" fullscreen transition="dialog-bottom-transition" :overlay="false">
          <v-card class="n611" slot="activator"></v-card>
          <v-card>
-          <v-toolbar dark color="primary">
-            <v-btn icon @click.native="dialog611 = false" dark>
-              <v-icon>close</v-icon>
-            </v-btn>
-            <v-toolbar-title>Node 611 Dashboard</v-toolbar-title>
-            <v-spacer></v-spacer>
-          </v-toolbar>
-         </v-card>
+           <v-toolbar dark color="primary">
+             <v-btn icon @click.native="dialog611 = false" dark>
+               <v-icon>close</v-icon>
+             </v-btn>
+             <v-toolbar-title>Node 611 Dashboard</v-toolbar-title>
+           </v-toolbar>
+           <prueba611 />
+          </v-card>
         </v-dialog>
     </v-card>
 </v-layout>
@@ -27,9 +27,11 @@
 
 <script>
 import Prueba from '../components/Prueba.vue'
+import Prueba611 from '../components/Prueba611.vue'
 export default {
   components: {
-    Prueba
+    Prueba,
+    Prueba611
   },
   data () {
     return {
@@ -42,12 +44,6 @@ export default {
 </script>
 
 <style scoped>
-.v-card .img {
-  width: 1148px;
-}
-.Grid {
-  position: absolute;
-}
 .red220 {
   position: absolute;
   background-color: transparent;
